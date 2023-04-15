@@ -19,9 +19,6 @@ const HALF_LIFE_PERIOD = 5730;
  */
 function dateSample(sampleActivity) {
 
-  console.log('sampleActivity ', sampleActivity);
-  
-
   let age = 0;
   let activity = +sampleActivity;
 
@@ -31,19 +28,6 @@ function dateSample(sampleActivity) {
 
   age = Math.log2(MODERN_ACTIVITY/activity) * HALF_LIFE_PERIOD;
   age = Math.ceil(age);
-
-/*
- 
-  let k = 100;
-  while ((k / 2) > activity) {
-    age += HALF_LIFE_PERIOD;
-    k = k / 2;
-  }
-
-  let lastAge = (activity - k/2) / k/2;
-  age += lastAge;
-  */
-
   return age;
 }
 
